@@ -4,7 +4,6 @@ using SoftGear.Strix.Client.Core.Model.Manager.Filter.Builder;
 
 namespace StrixEx {
     public struct RoomFilter {
-        IDictionary<string, object> dictionary;
         public string roomName;
         public int maxPlayer;
         public int mapKey;
@@ -27,7 +26,7 @@ namespace StrixEx {
         }
 
         public IDictionary<string, object> ToDictionary() {
-            dictionary = new Dictionary<string, object> {
+            return new Dictionary<string, object> {
                 {"name", roomName},
                 {"capacity", maxPlayer},
                 {"password", ""},
@@ -35,8 +34,6 @@ namespace StrixEx {
                 {"isJoinable", true},
                 {"key1", (double) mapKey},
             };
-
-            return dictionary;
         }
     }
 }
